@@ -622,11 +622,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: 34715f11-2ad5-44bb-b758-4a8fc80c4cb3
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: Test
+  organizationId: fuel93
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
