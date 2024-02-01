@@ -6,28 +6,29 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour
 {
-    Rigidbody2D RB;
+    Rigidbody2D rb;
     Player playerAttribute;
-    public float VelocityPercentage=1000;
+    public float additionSpeed=100;
+    public float talentSpeed = 0;
     // Start is called before the first frame update
     void Start()
     {
-        RB = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         playerAttribute = GetComponent<Player>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-       //if(Input.GetAxisRaw("Horizontal"))
+       if(Input.GetAxisRaw("Horizontal") != 0)
         MovementPlayer(playerAttribute.at.Agility);
     }
 
     public void MovementPlayer(float agility)
     {
-        float movmentX = Input.GetAxisRaw("Horizontal") * (agility*0.1F) + VelocityPercentage  * Time.fixedDeltaTime;
+        float movmentX = Input.GetAxisRaw("Horizontal") * ((agility+talentSpeed)*1.5f + additionSpeed)  * Time.fixedDeltaTime;
 
-        RB.velocity = new Vector2(movmentX, RB.velocity.y);
+        rb.velocity = new Vector2(movmentX, rb.velocity.y);
         Debug.Log(movmentX);
     }
        
